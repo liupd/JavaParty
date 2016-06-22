@@ -36,5 +36,12 @@
       <artifactId>jackson-mapper-asl</artifactId>
     </dependency>
     <!-- [End]json -->
+    
+    <!-- [Begin]Servlet & Jsp -->
+    <dependency>
+      <groupId>javax.servlet</groupId>
+      <artifactId>javax.servlet-api</artifactId>
+    </dependency>
+    <!-- [End]Servlet & Jsp -->
   </dependencies>
 </project>
