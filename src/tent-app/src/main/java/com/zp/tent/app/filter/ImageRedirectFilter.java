@@ -17,7 +17,7 @@ import org.apache.log4j.Logger;
  * 防盜链Filter
  */
 public class ImageRedirectFilter implements Filter {
-	private static Logger log = Logger.getLogger(AuthenFilter.class);
+	private static Logger log = Logger.getLogger(ImageRedirectFilter.class);
 
 	public void init(FilterConfig config) throws ServletException {
 	}

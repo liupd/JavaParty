@@ -1,8 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"%>
-<jsp:directive.page import="com.zp.tent.app.util.StatisticsUtil" />
+<jsp:directive.page import="com.zp.tent.common.util.StatisticsUtil" />
 <jsp:directive.page import="java.util.Date" />
 <jsp:directive.page import="java.text.DateFormat" />
-<jsp:directive.page import="com.zp.tent.app.dto.PersonInfo" />
+<jsp:directive.page import="com.zp.tent.app.dto.PersonInfoDTO" />
 <style>
 body, td {
 	font-size: 12px;
@@ -35,7 +35,7 @@ body, td {
 	<%
 	    for (String id : StatisticsUtil.SESSION_MAP.keySet()) {
 	        HttpSession sess = StatisticsUtil.SESSION_MAP.get(id);
-	        PersonInfo personInfo = (PersonInfo) sess.getAttribute("personInfo");
+	        PersonInfoDTO personInfo = (PersonInfoDTO) sess.getAttribute("personInfo");
 	%>
 	<tr <%=session == sess ? "bgcolor=#DDDDDD" : ""%>>
 		<td><%=id%></td>

@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:mvc="http://www.springframework.org/schema/mvc" xmlns:context="http://www.springframework.org/schema/context"
+  xmlns:p="http://www.springframework.org/schema/p"
+  xsi:schemaLocation="http://www.springframework.org/schema/beans
+            http://www.springframework.org/schema/beans/spring-beans-3.2.xsd
+            http://www.springframework.org/schema/mvc
+            http://www.springframework.org/schema/mvc/spring-mvc-3.2.xsd
+            http://www.springframework.org/schema/context
+            http://www.springframework.org/schema/context/spring-context-3.2.xsd">
+  <!-- 使用MethodInvokingJobDetailFactoryBean，任务类可以不实现Job接口，通过targetMethod指定调用方法 -->
+  <!-- [Begin]Hello Task -->
+  <bean id="helloTask" class="com.zp.tent.app.quartz.HelloTask" />
+  <bean id="helloJob"
+    class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+    <property name="group" value="job_work" />
+    <property name="name" value="helloJob" />
+    <!--false表示等上一个任务执行完后再开启新的任务 -->
+    <property name="concurrent" value="false" />
+    <property name="targetObject">
+      <ref bean="helloTask" />
+    </property>
+    <property name="targetMethod">
+      <value>execute</value>
+    </property>
+  </bean>
+
+  <!-- 调度触发器 -->
+  <bean id="helloJobTrigger" class="org.springframework.scheduling.quartz.CronTriggerFactoryBean">
+    <property name="name" value="helloJobTrigger" />
+    <property name="group" value="task" />
+    <property name="jobDetail">
+      <ref bean="helloJob" />
+    </property>
+    <property name="cronExpression">
+      <value>0 0/1 * * * ?</value>
+    </property>
+  </bean>
+  <!-- [End]Hello Task -->
+
+  <!-- [Begin]Goodbye Task -->
+  <bean id="goodbyeTask" class="com.zp.tent.app.quartz.GoodbyeTask" />
+  <bean id="goodbyeJob"
+    class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+    <property name="group" value="job_work" />
+    <property name="name" value="goodbyeJob" />
+    <!--false表示等上一个任务执行完后再开启新的任务 -->
+    <property name="concurrent" value="false" />
+    <property name="targetObject">
+      <ref bean="goodbyeTask" />
+    </property>
+    <property name="targetMethod">
+      <value>run</value>
+    </property>
+  </bean>
+
+  <!-- 调度触发器 -->
+  <bean id="goodbyeJobTrigger" class="org.springframework.scheduling.quartz.CronTriggerFactoryBean">
+    <property name="name" value="goodbyeJobTrigger" />
+    <property name="group" value="task" />
+    <property name="jobDetail">
+      <ref bean="goodbyeJob" />
+    </property>
+    <property name="cronExpression">
+      <value>0 0/1 * * * ?</value>
+    </property>
+  </bean>
+  <!-- [End]Goodbye Task -->
+
+  <!-- 调度工厂 -->
+  <bean id="schedulerFactoryBean" class="org.springframework.scheduling.quartz.SchedulerFactoryBean">
+    <property name="triggers">
+      <list>
+        <ref bean="helloJobTrigger" />
+        <ref bean="goodbyeJobTrigger" />
+      </list>
+    </property>
+  </bean>
+</beans>

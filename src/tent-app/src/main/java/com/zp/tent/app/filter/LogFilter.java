@@ -14,7 +14,7 @@ import javax.servlet.http.HttpServletResponse;
 import org.apache.log4j.Logger;
 
 public class LogFilter implements Filter {
-    private static Logger log = Logger.getLogger(AuthenFilter.class);
+    private static Logger log = Logger.getLogger(LogFilter.class);
 
     private String filterName;
 

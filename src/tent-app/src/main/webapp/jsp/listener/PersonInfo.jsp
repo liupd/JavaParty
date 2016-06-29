@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
-<jsp:directive.page import="com.zp.tent.app.dto.PersonInfo" />
+<jsp:directive.page import="com.zp.tent.app.dto.PersonInfoDTO" />
 <%
 	String action = request.getParameter("action");
 	String account = request.getParameter("account");
@@ -9,7 +9,7 @@
 	if("login".equals(action) && account.trim().length() > 0){
 	
 		// 登录，将personInfo放入session
-		PersonInfo personInfo = new PersonInfo();
+		PersonInfoDTO personInfo = new PersonInfoDTO();
 		personInfo.setAccount(account.trim().toLowerCase());
 		personInfo.setIp(request.getRemoteAddr());
 		personInfo.setLoginDate(new java.util.Date());

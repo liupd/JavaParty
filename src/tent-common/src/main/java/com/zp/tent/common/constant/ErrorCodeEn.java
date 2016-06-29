@@ -14,6 +14,10 @@ public enum ErrorCodeEn {
 	EXCEED_FILE_SIZE(2003, "超过文件大小上限"),
 
 	FILE_NOT_EXIST(2004, "文件不存在"),
+	
+	QUARTZ_FAIL(3001, "任务调度失败"),
+	
+	QUARTZ_JOB_NOT_EXIST(3002, "调度任务找不到"),
 
 	FAIL(-1, "失败");
 
