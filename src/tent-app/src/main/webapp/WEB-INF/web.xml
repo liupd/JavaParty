@@ -3,22 +3,29 @@
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
 http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd">
-  <display-name>tent-app</display-name>
+  <display-name>tent</display-name>
+  <welcome-file-list>
+    <welcome-file>index.jsp</welcome-file>
+  </welcome-file-list>
+
   <!--log4j配置地址 -->
   <context-param>
     <param-name>log4jConfigLocation</param-name>
     <param-value>classpath:log4j.properties</param-value>
   </context-param>
+
   <context-param>
-    <!-- log4j 配置扫描刷新间隔 可以不用 -->
-    <param-name>log4jRefreshInterval</param-name>
-    <param-value>10000</param-value>
+    <param-name>contextConfigLocation</param-name>
+    <param-value>classpath:applicationContext.xml</param-value>
   </context-param>
-  <!-- spring里的log4j配置监听器 -->
+
+  <!-- [Begin]listener -->
+  <listener>
+    <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+  </listener>
   <listener>
     <listener-class>org.springframework.web.util.Log4jConfigListener</listener-class>
   </listener>
-  <!-- [Begin]listener -->
   <listener>
     <listener-class>com.zp.tent.app.listener.SessionListenerTest</listener-class>
   </listener>
@@ -153,18 +160,20 @@ http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd">
 
   <!-- 声明前端控制器 -->
   <servlet>
-    <servlet-name>tent-app-spring</servlet-name>
+    <servlet-name>tent-app</servlet-name>
     <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
     <init-param>
       <!-- 如果不设置的话，默认的servlet配置文件名为xxx-servlet.xml -->
       <param-name>contextConfigLocation</param-name>
-      <param-value>/WEB-INF/tent-app-spring.xml</param-value>
+      <param-value>classpath:tent-app-spring.xml</param-value>
     </init-param>
     <load-on-startup>1</load-on-startup>
   </servlet>
+
   <!-- 声明DispatcherServlet处理哪些URL -->
   <servlet-mapping>
-    <servlet-name>tent-app-spring</servlet-name>
-    <url-pattern>/</url-pattern><!-- 映射到/表示会处理所有的请求 -->
+    <servlet-name>tent-app</servlet-name>
+    <!-- 映射到/表示会处理所有的请求 -->
+    <url-pattern>/</url-pattern>
   </servlet-mapping>
 </web-app>

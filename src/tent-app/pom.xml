@@ -30,10 +30,6 @@
 
     <!-- [Begin]日志 -->
     <dependency>
-      <groupId>commons-logging</groupId>
-      <artifactId>commons-logging</artifactId>
-    </dependency>
-    <dependency>
       <groupId>log4j</groupId>
       <artifactId>log4j</artifactId>
     </dependency>
@@ -47,7 +43,18 @@
     </dependency>
     <!-- [End]日志 -->
 
-    <!-- [Begin]调度器 -->
+    <!-- [Begin]模板引擎：velocity -->
+    <dependency>
+      <groupId>org.apache.velocity</groupId>
+      <artifactId>velocity</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.velocity</groupId>
+      <artifactId>velocity-tools</artifactId>
+    </dependency>
+    <!-- [End]模板引擎：velocity -->
+
+    <!-- [Begin]作业调度器：quartz -->
     <dependency>
       <groupId>org.quartz-scheduler</groupId>
       <artifactId>quartz</artifactId>
@@ -56,12 +63,12 @@
       <groupId>org.quartz-scheduler</groupId>
       <artifactId>quartz-jobs</artifactId>
     </dependency>
-    <!-- [End]调度器 -->
+    <!-- [End]作业调度器：quartz -->
 
     <!-- [Begin]Apache common工具集 -->
     <dependency>
-      <groupId>org.apache.commons</groupId>
-      <artifactId>commons-io</artifactId>
+      <groupId>commons-codec</groupId>
+      <artifactId>commons-codec</artifactId>
     </dependency>
     <dependency>
       <groupId>commons-collections</groupId>
@@ -70,6 +77,18 @@
     <dependency>
       <groupId>commons-fileupload</groupId>
       <artifactId>commons-fileupload</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.commons</groupId>
+      <artifactId>commons-io</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>commons-lang</groupId>
+      <artifactId>commons-lang</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>commons-logging</groupId>
+      <artifactId>commons-logging</artifactId>
     </dependency>
     <!-- [End]Apache common工具集 -->
 
@@ -88,18 +107,29 @@
     </dependency>
     <!-- [End]Servlet & Jsp -->
 
+    <!-- [Begin]database -->
+    <dependency>
+      <groupId>mysql</groupId>
+      <artifactId>mysql-connector-java</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>commons-dbcp</groupId>
+      <artifactId>commons-dbcp</artifactId>
+    </dependency>
+    <!-- [End]database -->
+
     <!-- [Begin]springframework -->
     <dependency>
       <groupId>org.springframework</groupId>
+      <artifactId>spring-core</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-jdbc</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework</groupId>
       <artifactId>spring-aop</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>org.springframework</groupId>
-      <artifactId>spring-asm</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>org.springframework</groupId>
-      <artifactId>spring-aspects</artifactId>
     </dependency>
     <dependency>
       <groupId>org.springframework</groupId>
@@ -115,27 +145,7 @@
     </dependency>
     <dependency>
       <groupId>org.springframework</groupId>
-      <artifactId>spring-core</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>org.springframework</groupId>
       <artifactId>spring-expression</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>org.springframework</groupId>
-      <artifactId>spring-jdbc</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>org.springframework</groupId>
-      <artifactId>spring-jms</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>org.springframework</groupId>
-      <artifactId>spring-orm</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>org.springframework</groupId>
-      <artifactId>spring-oxm</artifactId>
     </dependency>
     <dependency>
       <groupId>org.springframework</groupId>
@@ -143,7 +153,7 @@
     </dependency>
     <dependency>
       <groupId>org.springframework</groupId>
-      <artifactId>spring-web</artifactId>
+      <artifactId>spring-aspects</artifactId>
     </dependency>
     <dependency>
       <groupId>org.springframework</groupId>
@@ -151,7 +161,7 @@
     </dependency>
     <dependency>
       <groupId>org.springframework</groupId>
-      <artifactId>spring-test</artifactId>
+      <artifactId>spring-oxm</artifactId>
     </dependency>
     <!-- [End]springframework -->
 
@@ -161,6 +171,12 @@
       <artifactId>aspectjrt</artifactId>
     </dependency>
     <!-- [End]aspectj -->
+
+    <dependency>
+      <groupId>com.dexcoder</groupId>
+      <artifactId>dexcoder-dal-spring</artifactId>
+      <version>2.3.5</version>
+    </dependency>
   </dependencies>
 
   <build>

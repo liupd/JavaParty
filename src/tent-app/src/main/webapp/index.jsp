@@ -1,8 +1,0 @@
-<html>
-<head>
-<title>catch-spring</title>
-</head>
-<body>
-<h2>Hello World!</h2>
-</body>
-</html>
