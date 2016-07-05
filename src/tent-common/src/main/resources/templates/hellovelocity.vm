@@ -1,0 +1,8 @@
+#set( $iAmVariable = "good!" )
+Welcome $name to velocity.com
+today is $date.
+Show the list:
+#foreach ($i in $list)
+$i
+#end
+$iAmVariable

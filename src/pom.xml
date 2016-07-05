@@ -30,7 +30,7 @@
     <slf4j-log4j12.version>1.7.21</slf4j-log4j12.version>
 
     <!-- velocity -->
-    <velocity.version>1.6.2</velocity.version>
+    <velocity.version>1.7</velocity.version>
     <velocity-tools.version>2.0</velocity-tools.version>
 
     <!-- json -->
@@ -104,7 +104,7 @@
       </dependency>
       <!-- [End]Servlet & Jsp -->
 
-      <!-- [Begin]日志 -->
+      <!-- [Begin]日志log4j+slf4j -->
       <dependency>
         <groupId>log4j</groupId>
         <artifactId>log4j</artifactId>
@@ -120,7 +120,7 @@
         <artifactId>slf4j-log4j12</artifactId>
         <version>${slf4j-log4j12.version}</version>
       </dependency>
-      <!-- [End]日志 -->
+      <!-- [End]日志log4j+slf4j -->
 
       <!-- [Begin]模板引擎：velocity -->
       <dependency>
