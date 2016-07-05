@@ -41,6 +41,10 @@
       <groupId>org.slf4j</groupId>
       <artifactId>slf4j-log4j12</artifactId>
     </dependency>
+    <dependency>
+      <groupId>commons-logging</groupId>
+      <artifactId>commons-logging</artifactId>
+    </dependency>
     <!-- [End]日志 -->
 
     <!-- [Begin]模板引擎：velocity -->
@@ -67,10 +71,6 @@
 
     <!-- [Begin]Apache common工具集 -->
     <dependency>
-      <groupId>commons-codec</groupId>
-      <artifactId>commons-codec</artifactId>
-    </dependency>
-    <dependency>
       <groupId>commons-collections</groupId>
       <artifactId>commons-collections</artifactId>
     </dependency>
@@ -85,10 +85,6 @@
     <dependency>
       <groupId>commons-lang</groupId>
       <artifactId>commons-lang</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>commons-logging</groupId>
-      <artifactId>commons-logging</artifactId>
     </dependency>
     <!-- [End]Apache common工具集 -->
 
@@ -178,13 +174,4 @@
       <version>2.3.5</version>
     </dependency>
   </dependencies>
-
-  <build>
-    <plugins>
-      <plugin>
-        <groupId>org.mybatis.generator</groupId>
-        <artifactId>mybatis-generator-maven-plugin</artifactId>
-      </plugin>
-    </plugins>
-  </build>
 </project>
