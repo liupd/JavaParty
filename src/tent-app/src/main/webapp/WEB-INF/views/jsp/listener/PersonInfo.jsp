@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
-<jsp:directive.page import="com.zp.tent.app.dto.PersonInfoDTO" />
+<jsp:directive.page import="org.zp.tent.app.dto.PersonInfoDTO" />
 <%
 	String action = request.getParameter("action");
 	String account = request.getParameter("account");

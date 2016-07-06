@@ -20,7 +20,7 @@
       <property name="forceBigDecimals" value="false" />
     </javaTypeResolver>
 
-    <javaModelGenerator targetPackage="com.zp.tent.entity.domain" targetProject="src\main\java">
+    <javaModelGenerator targetPackage="org.zp.tent.entity.domain" targetProject="src\main\java">
       <property name="enableSubPackages" value="true" />
       <property name="trimStrings" value="true" />
     </javaModelGenerator>
@@ -29,7 +29,7 @@
       <property name="enableSubPackages" value="true" />
     </sqlMapGenerator>
 
-    <javaClientGenerator targetPackage="com.zp.tent.entity.dao" targetProject="src\main\java" type="XMLMAPPER">
+    <javaClientGenerator targetPackage="org.zp.tent.entity.dao" targetProject="src\main\java" type="XMLMAPPER">
       <property name="enableSubPackages" value="true" />
     </javaClientGenerator>
 

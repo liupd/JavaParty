@@ -27,22 +27,22 @@ http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd">
     <listener-class>org.springframework.web.util.Log4jConfigListener</listener-class>
   </listener>
   <listener>
-    <listener-class>com.zp.tent.app.listener.SessionListenerTest</listener-class>
+    <listener-class>org.zp.tent.app.listener.SessionListenerTest</listener-class>
   </listener>
   <listener>
-    <listener-class>com.zp.tent.app.listener.LoginSessionListener</listener-class>
+    <listener-class>org.zp.tent.app.listener.LoginSessionListener</listener-class>
   </listener>
   <listener>
-    <listener-class>com.zp.tent.app.listener.ListenerTest</listener-class>
+    <listener-class>org.zp.tent.app.listener.ListenerTest</listener-class>
   </listener>
   <listener>
-    <listener-class>com.zp.tent.app.listener.MyContextListener</listener-class>
+    <listener-class>org.zp.tent.app.listener.MyContextListener</listener-class>
   </listener>
   <listener>
-    <listener-class>com.zp.tent.app.listener.MySessionListener</listener-class>
+    <listener-class>org.zp.tent.app.listener.MySessionListener</listener-class>
   </listener>
   <listener>
-    <listener-class>com.zp.tent.app.listener.MyRequestListener</listener-class>
+    <listener-class>org.zp.tent.app.listener.MyRequestListener</listener-class>
   </listener>
   <!-- [End]listener -->
 
@@ -50,7 +50,7 @@ http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd">
   <!-- authenFilter -->
   <filter>
     <filter-name>authenFilter</filter-name>
-    <filter-class>com.zp.tent.app.filter.AuthenFilter</filter-class>
+    <filter-class>org.zp.tent.app.filter.AuthenFilter</filter-class>
     <init-param>
       <param-name>test-param</param-name>
       <param-value>AuthenFilter Init Paramter</param-value>
@@ -62,7 +62,7 @@ http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd">
   </filter-mapping>
   <filter>
     <filter-name>characterEncodingFilter</filter-name>
-    <filter-class>com.zp.tent.app.filter.CharacterEncodingFilter</filter-class>
+    <filter-class>org.zp.tent.app.filter.CharacterEncodingFilter</filter-class>
     <init-param>
       <param-name>characterEncoding</param-name>
       <param-value>UTF-8</param-value>
@@ -79,7 +79,7 @@ http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd">
   <!-- exceptionHandlerFilter -->
   <filter>
     <filter-name>exceptionHandlerFilter</filter-name>
-    <filter-class>com.zp.tent.app.filter.ExceptionHandlerFilter</filter-class>
+    <filter-class>org.zp.tent.app.filter.ExceptionHandlerFilter</filter-class>
   </filter>
   <filter-mapping>
     <filter-name>exceptionHandlerFilter</filter-name>
@@ -88,7 +88,7 @@ http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd">
   <!-- gzipFilter -->
   <filter>
     <filter-name>gzipFilter</filter-name>
-    <filter-class>com.zp.tent.app.filter.GZipFilter</filter-class>
+    <filter-class>org.zp.tent.app.filter.GZipFilter</filter-class>
   </filter>
   <filter-mapping>
     <filter-name>gzipFilter</filter-name>
@@ -97,7 +97,7 @@ http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd">
   <!-- imageRedirectFilter -->
   <filter>
     <filter-name>imageRedirectFilter</filter-name>
-    <filter-class>com.zp.tent.app.filter.ImageRedirectFilter</filter-class>
+    <filter-class>org.zp.tent.app.filter.ImageRedirectFilter</filter-class>
   </filter>
   <filter-mapping>
     <filter-name>imageRedirectFilter</filter-name>
@@ -106,7 +106,7 @@ http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd">
   <!-- logFilter -->
   <filter>
     <filter-name>logFilter</filter-name>
-    <filter-class>com.zp.tent.app.filter.LogFilter</filter-class>
+    <filter-class>org.zp.tent.app.filter.LogFilter</filter-class>
   </filter>
   <filter-mapping>
     <filter-name>logFilter</filter-name>
@@ -115,7 +115,7 @@ http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd">
   <!-- outputReplaceFilter -->
   <filter>
     <filter-name>outputReplaceFilter</filter-name>
-    <filter-class>com.zp.tent.app.filter.OutputReplaceFilter</filter-class>
+    <filter-class>org.zp.tent.app.filter.OutputReplaceFilter</filter-class>
     <init-param>
       <param-name>file</param-name>
       <param-value>/WEB-INF/sensitive.properties</param-value>
@@ -128,7 +128,7 @@ http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd">
   <!-- privilegeFilter -->
   <filter>
     <filter-name>privilegeFilter</filter-name>
-    <filter-class>com.zp.tent.app.filter.PrivilegeFilter</filter-class>
+    <filter-class>org.zp.tent.app.filter.PrivilegeFilter</filter-class>
     <init-param>
       <param-name>file</param-name>
       <param-value>/WEB-INF/privilege.properties</param-value>
@@ -141,7 +141,7 @@ http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd">
   <!-- SiteHitsFilter -->
   <filter>
     <filter-name>SiteHitsFilter</filter-name>
-    <filter-class>com.zp.tent.app.filter.SiteHitsFilter</filter-class>
+    <filter-class>org.zp.tent.app.filter.SiteHitsFilter</filter-class>
   </filter>
   <filter-mapping>
     <filter-name>SiteHitsFilter</filter-name>
@@ -150,7 +150,7 @@ http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd">
   <!-- xsltFilter -->
   <filter>
     <filter-name>xsltFilter</filter-name>
-    <filter-class>com.zp.tent.app.filter.XSLTFilter</filter-class>
+    <filter-class>org.zp.tent.app.filter.XSLTFilter</filter-class>
   </filter>
   <filter-mapping>
     <filter-name>xsltFilter</filter-name>

@@ -60,8 +60,8 @@
   </bean>
   <!-- 配置扫描器 -->
   <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
-    <!-- 扫描com.zp.tent.entity.dao这个包以及它的子包下的所有映射接口类 -->
-    <property name="basePackage" value="com.zp.tent.entity.dao" />
+    <!-- 扫描org.zp.tent.entity.dao这个包以及它的子包下的所有映射接口类 -->
+    <property name="basePackage" value="org.zp.tent.entity.dao" />
     <property name="sqlSessionFactoryBeanName" value="sqlSessionFactory" />
   </bean>
 
@@ -98,7 +98,7 @@
     </tx:attributes>
   </tx:advice>
   <aop:config>
-    <aop:pointcut id="transactionPointcut" expression="execution(* com.zp.tent.entity.service..*Impl.*(..))" />
+    <aop:pointcut id="transactionPointcut" expression="execution(* org.zp.tent.entity.service..*Impl.*(..))" />
     <aop:advisor pointcut-ref="transactionPointcut" advice-ref="transactionAdvice" />
   </aop:config>
 
@@ -108,7 +108,7 @@
   <bean id="druid-stat-pointcut" class="org.springframework.aop.support.JdkRegexpMethodPointcut" scope="prototype">
     <property name="patterns">
       <list>
-        <value>com.zp.tent.entity.service.*</value>
+        <value>org.zp.tent.entity.service.*</value>
       </list>
     </property>
   </bean>

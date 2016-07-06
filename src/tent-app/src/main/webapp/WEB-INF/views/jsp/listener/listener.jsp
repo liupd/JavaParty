@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"%>
-<jsp:directive.page import="com.zp.tent.common.util.StatisticsUtil" />
+<jsp:directive.page import="org.zp.tent.common.util.StatisticsUtil" />
 <jsp:directive.page import="java.util.Date" />
 <jsp:directive.page import="java.text.DateFormat" />
 <%

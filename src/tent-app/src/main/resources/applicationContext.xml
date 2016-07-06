@@ -17,7 +17,7 @@
   <aop:aspectj-autoproxy />
 
   <!-- 设置后，将查找使用@Component(@Controller是它的一种具体化)注解的类并将其注册为Bean -->
-  <context:component-scan base-package="com.zp.tent.app" />
+  <context:component-scan base-package="org.zp.tent.app" />
 
   <!-- 默认的注解映射的支持 -->
   <mvc:annotation-driven>

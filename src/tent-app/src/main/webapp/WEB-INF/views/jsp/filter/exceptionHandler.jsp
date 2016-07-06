@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" %>
-<%@ page import="com.zp.tent.common.exception.BusinessException" %>
-<%@ page import="com.zp.tent.common.exception.AccountException"%>
+<%@ page import="org.zp.tent.common.exception.BusinessException" %>
+<%@ page import="org.zp.tent.common.exception.AccountException"%>
 <%
 	String action = request.getParameter("action");
 

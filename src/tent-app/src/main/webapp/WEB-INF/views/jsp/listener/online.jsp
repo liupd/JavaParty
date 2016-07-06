@@ -1,8 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"%>
-<jsp:directive.page import="com.zp.tent.common.util.StatisticsUtil" />
+<jsp:directive.page import="org.zp.tent.common.util.StatisticsUtil" />
 <jsp:directive.page import="java.util.Date" />
 <jsp:directive.page import="java.text.DateFormat" />
-<jsp:directive.page import="com.zp.tent.app.dto.PersonInfoDTO" />
+<jsp:directive.page import="org.zp.tent.app.dto.PersonInfoDTO" />
 <style>
 body, td {
 	font-size: 12px;

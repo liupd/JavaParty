@@ -42,5 +42,5 @@
   </bean>
   
   <bean id="scheduleJobServiceImpl"
-    class="com.zp.tent.app.quartz.service.impl.ScheduleJobServiceImpl" />
+    class="org.zp.tent.app.quartz.service.impl.ScheduleJobServiceImpl" />
 </beans>
