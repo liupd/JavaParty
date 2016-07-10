@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<web-app version="3.0" xmlns="http://java.sun.com/xml/ns/javaee"
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<web-app version="3.0" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
 http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd">
   <display-name>tent</display-name>
@@ -8,24 +7,27 @@ http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd">
     <welcome-file>index.jsp</welcome-file>
   </welcome-file-list>
 
-  <!--log4j配置地址 -->
+  <!-- [Begin]listener -->
+  <!--初始化log4j监听器 -->
   <context-param>
     <param-name>log4jConfigLocation</param-name>
-    <param-value>classpath:log4j.properties</param-value>
+    <param-value>classpath:log4j.xml</param-value>
   </context-param>
-
-  <context-param>
-    <param-name>contextConfigLocation</param-name>
-    <param-value>classpath:applicationContext.xml</param-value>
-  </context-param>
-
-  <!-- [Begin]listener -->
-  <listener>
-    <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
-  </listener>
   <listener>
     <listener-class>org.springframework.web.util.Log4jConfigListener</listener-class>
+    <description>Log4jConfigListener的作用是：根据配置文件初始化log4j。需要配置名为log4jConfigLocation的context-param</description>
   </listener>
+
+  <!-- 初始化applicationContext监听器 -->
+  <context-param>
+    <param-name>contextConfigLocation</param-name>
+    <param-value>/WEB-INF/applicationContext.xml</param-value>
+  </context-param>
+  <listener>
+    <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+    <description>ContextLoaderListener的作用是：启动Web容器时，自动装配ApplicationContext的配置信息。需要配置名为contextConfigLocation的context-param</description>
+  </listener>
+
   <listener>
     <listener-class>org.zp.tent.app.listener.SessionListenerTest</listener-class>
   </listener>
@@ -46,7 +48,25 @@ http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd">
   </listener>
   <!-- [End]listener -->
 
-  <!-- [Begin]Filter -->
+  <!-- [Begin]过滤器 -->
+  <!-- 字符编码过滤器：强制将HttpServletRequest转为UTF-8编码格式 -->
+  <filter>
+    <filter-name>characterEncodingFilter</filter-name>
+    <filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
+    <init-param>
+      <param-name>encoding</param-name>
+      <param-value>UTF-8</param-value>
+    </init-param>
+    <init-param>
+      <param-name>forceEncoding</param-name>
+      <param-value>true</param-value>
+    </init-param>
+  </filter>
+  <filter-mapping>
+    <filter-name>characterEncodingFilter</filter-name>
+    <url-pattern>/*</url-pattern>
+  </filter-mapping>
+
   <!-- authenFilter -->
   <filter>
     <filter-name>authenFilter</filter-name>
@@ -58,22 +78,6 @@ http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd">
   </filter>
   <filter-mapping>
     <filter-name>authenFilter</filter-name>
-    <url-pattern>/*</url-pattern>
-  </filter-mapping>
-  <filter>
-    <filter-name>characterEncodingFilter</filter-name>
-    <filter-class>org.zp.tent.app.filter.CharacterEncodingFilter</filter-class>
-    <init-param>
-      <param-name>characterEncoding</param-name>
-      <param-value>UTF-8</param-value>
-    </init-param>
-    <init-param>
-      <param-name>enable</param-name>
-      <param-value>true</param-value>
-    </init-param>
-  </filter>
-  <filter-mapping>
-    <filter-name>characterEncodingFilter</filter-name>
     <url-pattern>/*</url-pattern>
   </filter-mapping>
   <!-- exceptionHandlerFilter -->
@@ -156,7 +160,7 @@ http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd">
     <filter-name>xsltFilter</filter-name>
     <url-pattern>/msn/*</url-pattern>
   </filter-mapping>
-  <!-- [End]Filter -->
+  <!-- [End]过滤器 -->
 
   <!-- 声明前端控制器 -->
   <servlet>

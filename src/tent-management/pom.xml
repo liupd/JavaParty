@@ -5,7 +5,7 @@
   <parent>
     <groupId>org.zp</groupId>
     <artifactId>tent</artifactId>
-    <version>0.0.1</version>
+    <version>0.0.2</version>
   </parent>
   <artifactId>tent-management</artifactId>
   <name>tent-management</name>
@@ -18,7 +18,7 @@
     <jdk.version>1.8</jdk.version>
 
     <!-- [Begin]Dependencies Version -->
-    <tent.version>0.0.1</tent.version>
+    <tent.version>0.0.2</tent.version>
 
     <!-- servlet & jsp -->
     <servlet-api.version>3.1.0</servlet-api.version>
@@ -75,6 +75,11 @@
       <dependency>
         <groupId>org.zp</groupId>
         <artifactId>tent-common</artifactId>
+        <version>${tent.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.zp</groupId>
+        <artifactId>tent-entity</artifactId>
         <version>${tent.version}</version>
       </dependency>
 
@@ -427,14 +432,6 @@
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-source-plugin</artifactId>
           <version>3.0.0</version>
-          <configuration>
-            <encoding>${project.build.sourceEncoding}</encoding>
-            <source>${jdk.version}</source>
-            <target>${jdk.version}</target>
-            <debug>true</debug>
-            <optimize>true</optimize>
-            <showDeprecations>true</showDeprecations>
-          </configuration>
           <executions>
             <execution>
               <id>attach-source</id>
