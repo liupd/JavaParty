@@ -8,7 +8,8 @@
 .zip
 .rar
 .idea
-*.iml
+.iml
+.eml
 
 # ignored folders
 .settings
