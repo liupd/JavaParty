@@ -136,13 +136,13 @@ public class Base64Demo {
 
 一种是把明文信息划分为不同的组（或块）结构，分别对每个组（或块）进行加密、解密，称为分组密码。
 
-![Java与加密算法图1](https://raw.githubusercontent.com/atlantis1024/JavaSENotes/master/images/security(%E5%AE%89%E5%85%A8)/Java%E4%B8%8E%E5%8A%A0%E5%AF%86%E7%AE%97%E6%B3%95%E5%9B%BE1.png)
+![Java与加密算法图1](https://raw.githubusercontent.com/atlantis1024/JavaParty/master/images/%E7%BC%96%E7%A8%8B/toolbox/%E7%BC%96%E7%A0%81(encode)/Java%E4%B8%8E%E5%8A%A0%E5%AF%86%E7%AE%97%E6%B3%95%E5%9B%BE1.png)
 
 
 
 假设甲乙方作为通信双方。假定甲乙双方在消息传递前已商定加密算法，欲完成一次消息传递需要经过如下步骤。
 
-![Java与加密算法图2](https://raw.githubusercontent.com/atlantis1024/JavaSENotes/37e1cb3e00e2852653dae742505848ce60ea17b1/images/security(%E5%AE%89%E5%85%A8)/Java%E4%B8%8E%E5%8A%A0%E5%AF%86%E7%AE%97%E6%B3%95%E5%9B%BE2.png)
+![Java与加密算法图2](https://raw.githubusercontent.com/atlantis1024/JavaParty/master/images/%E7%BC%96%E7%A8%8B/toolbox/%E7%BC%96%E7%A0%81(encode)/Java%E4%B8%8E%E5%8A%A0%E5%AF%86%E7%AE%97%E6%B3%95%E5%9B%BE2.png)
 
 ### 工作模式
 
@@ -411,7 +411,7 @@ PBE没有密钥概念，密钥在其他对称加密算法中是经过计算得�
 
 流程：
 
-![Java与加密算法图3](https://raw.githubusercontent.com/atlantis1024/JavaSENotes/37e1cb3e00e2852653dae742505848ce60ea17b1/images/security(%E5%AE%89%E5%85%A8)/Java%E4%B8%8E%E5%8A%A0%E5%AF%86%E7%AE%97%E6%B3%95%E5%9B%BE3.png)
+![Java与加密算法图3](https://raw.githubusercontent.com/atlantis1024/JavaParty/master/images/%E7%BC%96%E7%A8%8B/toolbox/%E7%BC%96%E7%A0%81(encode)/Java%E4%B8%8E%E5%8A%A0%E5%AF%86%E7%AE%97%E6%B3%95%E5%9B%BE3.png)
 
  
 
@@ -480,7 +480,7 @@ byte[] ciphertext = cipher.doFinal(plaintext);
 
 ### 原理
 
-![Java与加密算法图4](https://raw.githubusercontent.com/atlantis1024/JavaSENotes/37e1cb3e00e2852653dae742505848ce60ea17b1/images/security(%E5%AE%89%E5%85%A8)/Java%E4%B8%8E%E5%8A%A0%E5%AF%86%E7%AE%97%E6%B3%95%E5%9B%BE4.png)
+![Java与加密算法图4](https://raw.githubusercontent.com/atlantis1024/JavaParty/master/images/%E7%BC%96%E7%A8%8B/toolbox/%E7%BC%96%E7%A0%81(encode)/Java%E4%B8%8E%E5%8A%A0%E5%AF%86%E7%AE%97%E6%B3%95%E5%9B%BE4.png)
 
 非对称加密算法实现机密信息交换的基本过程是：甲方生成一对密钥并将其中的一把作为公用密钥向其它方公开；得到该公用密钥的乙方使用该密钥对机密信息进行加密后再发送给甲方；甲方再用自己保存的另一把专用密钥对加密后的信息进行解密。
 
