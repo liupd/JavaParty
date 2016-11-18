@@ -1,38 +1,15 @@
-# tent
-tent是一个Java Web开发框架，集成了当前一些主流的技术。
+# JavaParty
+JavaParty 是一个Java开源项目的派对。请尽情狂欢。
 
-## 技术树
-### 框架
-***`Spring`***
-使用Spring来作为JavaBean容器。代码中应用到依赖注入和AOP。
+## Java 通讯录
+- [awesome-java](https://github.com/akullpp/awesome-java)
 
-***`SpringMVC`***
-使用SpringMVC来作为MVC框架。
+awesome-java 是一个维护 Java学习资源的开源项目。
 
-***`Mybatis`***
-使用轻量级ORM框架Mybatis。并在代码中使用`Mybatis Generater`来生成DAO、DTO以及映射关系xml文件。
-尽量减少对sql的依赖。
+- [awesome-java-cn](https://github.com/jobbole/awesome-java-cn)
 
-### 项目管理
-***`Maven`***
-使用Maven管理项目构建、jar包依赖
 
-### 工具
-***`log4j+slf4j`***
-使用log4j+slf4j来记录日志
+awesome-java-cn 是 awesome-java 的中文版本。
 
-***`velocity`***
-使用velocity来作为模板引擎
 
-***`fastjson`***
-使用alibaba.fastjson来作为json处理工具
 
-## 开发环境
-***`JDK版本`***
-JDK1.8
-
-***`编码格式(Encoding)`***
-UTF-8
-
-***`服务器`***
-Tomcat

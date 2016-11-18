@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>org.zp</groupId>
+  <artifactId>javaparty</artifactId>
+  <version>${project.version}</version>
+  <packaging>pom</packaging>
+  <description>javaparty 是java各种技术的派对，你可以在这里看到各种主流java技术的应用</description>
+
+  <properties>
+    <project.version>0.0.1</project.version>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  </properties>
+
+  <modules>
+    <module>src/toolbox</module>
+  </modules>
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.6.0</version>
+        <configuration>
+          <verbose>true</verbose>
+          <fork>true</fork>
+          <executable><!-- path-to-javac --></executable>
+          <compilerVersion>1.8</compilerVersion>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+
+  <!-- 开发者信息 -->
+  <developers>
+    <developer>
+      <id>atlantis1024</id>
+      <name>atlantis</name>
+      <email>atlantis1024@163.com</email>
+      <timezone>+8</timezone>
+    </developer>
+  </developers>
+</project>
