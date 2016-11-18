@@ -11,11 +11,7 @@
     <relativePath>../../pom.xml</relativePath>
   </parent>
 
-  <artifactId>toolbox</artifactId>
-  <packaging>pom</packaging>
+  <artifactId>javase</artifactId>
+  <packaging>jar</packaging>
 
-  <modules>
-    <module>logging</module>
-    <module>encode</module>
-  </modules>
 </project>

@@ -9,7 +9,7 @@
     <groupId>org.zp</groupId>
     <version>${project.version}</version>
   </parent>
-  <dependencies>本工程展示日志解决方案</dependencies>
+  <description>本工程展示日志解决方案</description>
 
   <artifactId>logging</artifactId>
   <packaging>jar</packaging>
