@@ -17,5 +17,7 @@
   <modules>
     <module>logging</module>
     <module>encode</module>
+    <module>json</module>
+    <module>test</module>
   </modules>
 </project>

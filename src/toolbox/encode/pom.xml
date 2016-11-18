@@ -20,7 +20,7 @@
     <bcprov-jdk15on.version>1.54</bcprov-jdk15on.version>
 
     <!-- Json -->
-    <alibaba-fastjson.version>1.2.7</alibaba-fastjson.version>
+    <alibaba-fastjson.version>1.2.8</alibaba-fastjson.version>
     <jackson-core.version>2.7.4</jackson-core.version>
     <jackson-mapper-asl>1.9.13</jackson-mapper-asl>
 
