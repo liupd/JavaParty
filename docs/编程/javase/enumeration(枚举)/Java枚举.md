@@ -43,7 +43,9 @@ public abstract class Enum<E extends Enum<E>>
 
 `getDeclaringClass()`：返回实例所属的enum类型。
 
-可以使用 `==` 来比较`enum`实例，编译器会自动提供 `equals()` 和 `hashCode()` 方法。
+ `equals()` ：判断是否为同一个对象。
+
+可以使用 `==` 来比较`enum`实例。
 
 此外，`java.lang.Enum`实现了`Comparable`和 `Serializable` 接口，所以也提供 `compareTo()` 方法。
 
