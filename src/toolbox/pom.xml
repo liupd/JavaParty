@@ -19,5 +19,6 @@
     <module>encode</module>
     <module>json</module>
     <module>test</module>
+    <module>html</module>
   </modules>
 </project>
