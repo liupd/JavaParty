@@ -5,6 +5,7 @@
 
 ## Java基础教程
 
+[Java 枚举用法详解](https://github.com/atlantis1024/JavaParty/blob/master/docs/%E7%BC%96%E7%A8%8B/javase/enumeration(%E6%9E%9A%E4%B8%BE)/Java%E6%9E%9A%E4%B8%BE.md)
 
 
 ## Java进阶教程
