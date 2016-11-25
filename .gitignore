@@ -1,15 +1,15 @@
 # ignored files
-.mymetadata
-.checkstyle
-.classpath
-.project
-.class
-.war
-.zip
-.rar
-.idea
-.iml
-.eml
+*.mymetadata
+*.checkstyle
+*.classpath
+*.project
+*.class
+*.war
+*.zip
+*.rar
+*.idea
+*.iml
+*.eml
 
 # ignored folders
 .settings
