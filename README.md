@@ -9,12 +9,12 @@ JavaParty 的目标是打造一个 Java 技术的盛宴。
 - [**JavaSE 笔记**](https://github.com/atlantis1024/JavaParty/tree/master/docs/%E7%BC%96%E7%A8%8B/javase/README.md) 是一个学习JDK的笔记。
 
 ### 工具库(Toolbox)
-- [Toolbox笔记](https://github.com/atlantis1024/JavaParty/blob/master/docs/%E7%BC%96%E7%A8%8B/toolbox/README.md) 是一个学习Java 主流工具库的笔记。
+- [**Toolbox笔记**](https://github.com/atlantis1024/JavaParty/blob/master/docs/%E7%BC%96%E7%A8%8B/toolbox/README.md) 是一个学习Java 主流工具库的笔记。
 
 
 
 
-## Java 资料
+## 学习资料
 ### Java 技术一览
 - [awesome-java](https://github.com/akullpp/awesome-java)
 
