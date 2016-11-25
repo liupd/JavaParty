@@ -8,6 +8,7 @@ import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
+import org.junit.Assert;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
@@ -21,12 +22,17 @@ import java.io.IOException;
  */
 public class JsoupTest {
     final String filePath = System.getProperty("user.dir")
-            + "\\src\\test\\resources\\html\\example.html";
+            + "\\src\\test\\resources\\html\\jsoup-cookbook.html";
+    private Document docFromStr;
+    private Document docFromUrl;
+    private Document docFromFile;
 
-    Document docFromStr;
-    Document docFromUrl;
-    Document docFromFile;
-
+    /**
+     * Jsoup 有三种方式加载文档(Document):
+     * HTML字符串、URL地址、html文件
+     *
+     * @throws IOException
+     */
     @Before
     public void before() throws IOException {
         // 从一个html字符串加载Document对象
@@ -39,15 +45,20 @@ public class JsoupTest {
 
         // 从一个文件加载Document对象
         File input = new File(filePath);
-        docFromFile = Jsoup.parse(input, "UTF-8", "");
+        docFromFile = Jsoup.parse(input, "UTF-8");
+
+        String htmlFragment = "<div><p>Lorem ipsum.</p>";
+        Document doc = Jsoup.parse(htmlFragment);
     }
 
+    /**
+     * 获取html的title、head、body
+     */
     @Test
     public void testGetHeadAndBody() {
-        Element head = docFromStr.head();
-        Element body = docFromStr.body();
-        System.out.println("head内容：\n" + head.toString());
-        System.out.println("body内容：\n" + body.toString());
+        System.out.println("title内容：\n" + docFromStr.title());
+        System.out.println("head内容：\n" + docFromStr.head());
+        System.out.println("body内容：\n" + docFromStr.body());
     }
 
     /**
@@ -56,7 +67,7 @@ public class JsoupTest {
     @Test
     public void test01() {
         // 遍历一个Document对象中所有的链接
-        Element content = docFromUrl.body();
+        Element content = docFromFile.body();
         Elements links = content.getElementsByTag("a");
         for (Element link : links) {
             System.out.println("linkHref: " + link.attr("href"));
@@ -81,5 +92,16 @@ public class JsoupTest {
         //在h3元素之后的a元素
         Elements resultLinks = docFromUrl.select("div.head_wrapper > a");
         System.out.println("[resultLinks]\n" + resultLinks.toString());
+    }
+
+    @Test
+    public void test() {
+        // 从元素集合抽取属性、文本和html内容
+        Element link = docFromUrl.select("a").first();//查找第一个a元素
+        System.out.println("outerHtml: " + link.outerHtml());
+        System.out.println("html: " + link.html()); //取得链接内的html内容
+        System.out.println("href: " + link.attr("href")); //取得字符串中的文本
+        System.out.println("text: " + link.text()); //取得链接地址中的文本
+
     }
 }
