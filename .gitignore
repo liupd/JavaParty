@@ -1,18 +1,41 @@
-# ignored files
-*.mymetadata
-*.checkstyle
-*.classpath
-*.project
+### Java template
 *.class
-*.war
-*.zip
-*.rar
-*.idea
-*.iml
-*.eml
 
-# ignored folders
-.settings
-target
-classes
+# Mobile Tools for Java (J2ME)
+.mtj.tmp/
+
+# Package Files #
+*.jar
+*.war
+*.ear
+
+
+### Eclipse template
+
+# Eclipse folders
+.settings/
+bin/
+tmp/
+target/
+
+# Eclipse files
+.project
+.classpath
+
+
+### IntelliJ template
+# Covers JetBrains IDEs: IntelliJ, RubyMine, PhpStorm, AppCode, PyCharm, CLion, Android Studio and Webstorm
+# Reference: https://intellij-support.jetbrains.com/hc/en-us/articles/206544839
+
+# IntelliJ folders
+.idea
+out
+/out/
+
+# IntelliJ files
+*.iws
+*.iml
+
+### Example user template
+log
 logs
