@@ -16,8 +16,9 @@
   </properties>
 
   <modules>
-    <module>src/toolbox</module>
     <module>src/javase</module>
+    <module>src/toolbox</module>
+    <module>src/framework</module>
   </modules>
 
   <build>
