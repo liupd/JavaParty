@@ -3,18 +3,20 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <parent>
-    <artifactId>javaparty</artifactId>
+    <artifactId>middleware</artifactId>
     <groupId>org.zp</groupId>
     <version>${project.version}</version>
-    <relativePath>../../pom.xml</relativePath>
+    <relativePath>../pom.xml</relativePath>
   </parent>
   <modelVersion>4.0.0</modelVersion>
+  <artifactId>jms</artifactId>
+  <packaging>jar</packaging>
 
-  <artifactId>framework</artifactId>
-  <packaging>pom</packaging>
-  <modules>
-    <module>message-receiver</module>
-    <module>message-sender</module>
-  </modules>
-
+  <dependencies>
+    <dependency>
+      <groupId>org.apache.activemq</groupId>
+      <artifactId>activemq-all</artifactId>
+      <version>5.14.1</version>
+    </dependency>
+  </dependencies>
 </project>

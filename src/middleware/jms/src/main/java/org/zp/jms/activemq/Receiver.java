@@ -2,7 +2,7 @@
  * The Apache License 2.0
  * Copyright (c) 2016 Victor Zhang
  */
-package org.zp.message.activemq;
+package org.zp.jms.activemq;
 
 import org.apache.activemq.ActiveMQConnection;
 import org.apache.activemq.ActiveMQConnectionFactory;
@@ -15,6 +15,8 @@ import javax.jms.Session;
 import javax.jms.TextMessage;
 
 /**
+ * 消息的消费者
+ *
  * @author Victor Zhang
  * @date 2016/11/28.
  */
@@ -33,15 +35,14 @@ public class Receiver {
         connectionFactory = new ActiveMQConnectionFactory(
                 ActiveMQConnection.DEFAULT_USER,
                 ActiveMQConnection.DEFAULT_PASSWORD,
-                "tcp://localhost:61616");
+                ActiveMQConnection.DEFAULT_BROKER_URL);
         try {
             // 构造从工厂得到连接对象
             connection = connectionFactory.createConnection();
             // 启动
             connection.start();
             // 获取操作连接
-            session = connection.createSession(Boolean.FALSE,
-                    Session.AUTO_ACKNOWLEDGE);
+            session = connection.createSession(Boolean.FALSE, Session.AUTO_ACKNOWLEDGE);
             // 获取session注意参数值xingbo.xu-queue是一个服务器的queue，须在在ActiveMq的console配置
             destination = session.createQueue("FirstQueue");
             consumer = session.createConsumer(destination);
