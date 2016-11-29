@@ -1,17 +1,18 @@
 # JMS基本概念
 
-`JMS`即 Java消息服务（Java Message Service）应用程序接口，是一个Java平台中关于面向消息中间件（MOM）的API，用于在两个应用程序之间，或分布式系统中发送消息，进行异步通信。Java消息服务是一个与具体平台无关的API，绝大多数MOM提供商都对JMS提供支持。
+`JMS` 即 **Java消息服务（Java Message Service）API**，是一个Java平台中关于面向消息中间件的API。它用于在两个应用程序之间，或分布式系统中发送消息，进行异步通信。Java消息服务是一个与具体平台无关的API，绝大多数MOM提供商都对JMS提供支持。
 
 
 
 ## 消息模型
 
+JMS 有两种消息模型：
 - Point-to-Point(P2P)
 - Publish/Subscribe(Pub/Sub)
 
-
-
 ### P2P的特点
+
+![jms-point_to_point](https://raw.githubusercontent.com/atlantis1024/JavaParty/master/images/%E7%BC%96%E7%A8%8B/middleware/jms/jms-p2p.jpg)
 
 在点对点的消息系统中，消息分发给一个单独的使用者。点对点消息往往与队列 `javax.jms.Queue` 相关联。
 
@@ -24,6 +25,8 @@
 
 ### Pub/Sub的特点
 
+![jms-pub_and_sub](https://raw.githubusercontent.com/atlantis1024/JavaParty/master/images/%E7%BC%96%E7%A8%8B/middleware/jms/jms-pub_and_sub.jpg)
+
 发布/订阅消息系统支持一个事件驱动模型，消息生产者和消费者都参与消息的传递。生产者发布事件，而使用者订阅感兴趣的事件，并使用事件。该类型消息一般与特定的主题 `javax.jms.Topic` 关联。
 
 每个消息可以有多个消费者
@@ -33,37 +36,68 @@
 
 
 
-## JMS编程模型
+## JMS 编程模型
+
+![JMS 编程模型](https://raw.githubusercontent.com/atlantis1024/JavaParty/master/images/%E7%BC%96%E7%A8%8B/middleware/jms/jms-program_model.jpg)
+
+
 
 ### ConnectionFactory
 
-创建Connection对象的工厂，针对两种不同的jms消息模型，分别有QueueConnectionFactory和TopicConnectionFactory两种。可以通过JNDI来查找ConnectionFactory对象。
+创建 `Connection` 对象的工厂，针对两种不同的 jms 消息模型，分别有 `QueueConnectionFactory` 和`TopicConnectionFactory` 两种。可以通过JNDI来查找 `ConnectionFactory` 对象。
 
-### Destination
 
-Destination的意思是消息生产者的消息发送目标或者说消息消费者的消息来源。对于消息生产者来说，它的Destination是某个队列（Queue）或某个主题（Topic）;对于消息消费者来说，它的Destination也是某个队列或主题（即消息来源）。
-
-所以，Destination实际上就是两种类型的对象：Queue、Topic可以通过JNDI来查找Destination。
 
 ### Connection
 
-Connection表示在客户端和JMS系统之间建立的链接（对TCP/IP socket的包装）。Connection可以产生一个或多个Session。跟ConnectionFactory一样，Connection也有两种类型：QueueConnection和TopicConnection。
+`Connection` 表示在客户端和JMS系统之间建立的链接（对TCP/IP socket的包装）。`Connection` 可以产生一个或多个`Session`。跟 `ConnectionFactory` 一样，`Connection` 也有两种类型：`QueueConnection` 和 `TopicConnection`。
+
+
+
+### Destination
+
+`Destination` 是一个包装了消息目标标识符的被管对象。消息目标是指消息发布和接收的地点，或者是队列 `Queue` ，或者是主题 `Topic` 。JMS管理员创建这些对象，然后用户通过JNDI发现它们。和连接工厂一样，管理员可以创建两种类型的目标，点对点模型的 `Queue`，以及发布者/订阅者模型的 `Topic`。
+
+
 
 ### Session
 
-Session是我们操作消息的接口。可以通过session创建生产者、消费者、消息等。Session提供了事务的功能。当我们需要使用session发送/接收多个消息时，可以将这些发送/接收动作放到一个事务中。同样，也分QueueSession和TopicSession。
+`Session` 表示一个单线程的上下文，用于发送和接收消息。由于会话是单线程的，所以消息是连续的，就是说消息是按照发送的顺序一个一个接收的。会话的好处是它支持事务。如果用户选择了事务支持，会话上下文将保存一组消息，直到事务被提交才发送这些消息。在提交事务之前，用户可以使用回滚操作取消这些消息。一个会话允许用户创建消息，生产者来发送消息，消费者来接收消息。同样，`Session` 也分 `QueueSession` 和 `TopicSession`。
 
-### 消息的生产者
 
-消息生产者由Session创建，并用于将消息发送到Destination。同样，消息生产者分两种类型：QueueSender和TopicPublisher。可以调用消息生产者的方法（send或publish方法）发送消息。
 
-### 消息消费者
+### MessageConsumer
 
-消息消费者由Session创建，用于接收被发送到Destination的消息。两种类型：QueueReceiver和TopicSubscriber。可分别通过session的createReceiver(Queue)或createSubscriber(Topic)来创建。当然，也可以session的creatDurableSubscriber方法来创建持久化的订阅者。
+`MessageConsumer` 由 `Session` 创建，并用于将消息发送到 `Destination`。消费者可以同步地（阻塞模式），或（非阻塞）接收 `Queue` 和 `Topic` 类型的消息。同样，消息生产者分两种类型：`QueueSender` 和`TopicPublisher`。
 
-### MessageListener
 
-消息监听器。如果注册了消息监听器，一旦消息到达，将自动调用监听器的onMessage方法。EJB中的MDB（Message-Driven Bean）就是一种MessageListener。
+
+### MessageProducer
+
+`MessageProducer` 由 `Session` 创建，用于接收被发送到 `Destination` 的消息。`MessageProducer` 有两种类型：`QueueReceiver` 和 `TopicSubscriber`。可分别通过 `session` 的 `createReceiver(Queue)` 或 `createSubscriber(Topic)` 来创建。当然，也可以 `session` 的 `creatDurableSubscriber` 方法来创建持久化的订阅者。
+
+
+
+### Message
+
+是在消费者和生产者之间传送的对象，也就是说从一个应用程序传送到另一个应用程序。一个消息有三个主要部分：
+
+- 消息头（必须）：包含用于识别和为消息寻找路由的操作设置。
+- 一组消息属性（可选）：包含额外的属性，支持其他提供者和用户的兼容。可以创建定制的字段和过滤器（消息选择器）。
+- 一个消息体（可选）：允许用户创建五种类型的消息（文本消息，映射消息，字节消息，流消息和对象消息）。
+
+消息接口非常灵活，并提供了许多方式来定制消息的内容。
+
+
+
+| Common            | Point-to-Point              | Publish-Subscribe      |
+| ----------------- | --------------------------- | ---------------------- |
+| ConnectionFactory | QueueConnectionFactory      | TopicConnectionFactory |
+| Connection        | QueueConnection             | TopicConnection        |
+| Destination       | Queue                       | Topic                  |
+| Session           | QueueSession                | TopicSession           |
+| MessageProducer   | QueueSender                 | TopicPublisher         |
+| MessageSender     | QueueReceiver, QueueBrowser | TopicSubscriber        |
 
 
 
@@ -255,8 +289,34 @@ public class Receiver {
 }
 ```
 
+**运行**
+
+先运行 Receiver.java 进行消息监听，再运行 Send.java 发送消息。
+
+**输出**
+
+Send的输出内容
+
+```
+发送消息：Activemq 发送消息0
+发送消息：Activemq 发送消息1
+发送消息：Activemq 发送消息2
+发送消息：Activemq 发送消息3
+```
+
+Receiver的输出内容
+
+```
+收到消息ActiveMQ 发送消息0
+收到消息ActiveMQ 发送消息1
+收到消息ActiveMQ 发送消息2
+收到消息ActiveMQ 发送消息3
+```
+
 
 
 # 参考
 
 [ActiveMQ 官网](http://activemq.apache.org/)
+
+[oracle 官方的jms介绍](https://docs.oracle.com/cd/E19575-01/819-3669/6n5sg7cgq/index.html)
