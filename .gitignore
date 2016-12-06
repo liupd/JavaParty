@@ -36,6 +36,9 @@ out
 *.iws
 *.iml
 
+### activemq
+activemq-data
+
 ### Example user template
 log
 logs
