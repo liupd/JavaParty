@@ -5,10 +5,17 @@ JavaParty 的目标是打造一个 Java 技术的盛宴。
 
 
 ## 学习笔记
-### JavaSE 笔记
+### 编码
+
+#### 高效编程
+
+- [**重构之道**](https://github.com/atlantis1024/JavaParty/tree/master/docs/%E7%BC%96%E7%A8%8B/%E9%AB%98%E6%95%88%E7%BC%96%E7%A8%8B/%E9%87%8D%E6%9E%84) 是一个关于重构方法论的笔记。
+
+#### JavaSE 笔记
+
 - [**JavaSE 笔记**](https://github.com/atlantis1024/JavaParty/tree/master/docs/%E7%BC%96%E7%A8%8B/javase/README.md) 是一个学习JDK的笔记。
 
-### 工具库(Toolbox)
+#### 工具库(Toolbox)
 - [**Toolbox笔记**](https://github.com/atlantis1024/JavaParty/blob/master/docs/%E7%BC%96%E7%A8%8B/toolbox/README.md) 是一个学习Java 主流工具库的笔记。
 
 
@@ -16,13 +23,10 @@ JavaParty 的目标是打造一个 Java 技术的盛宴。
 
 ## 学习资料
 ### Java 技术一览
-- [awesome-java](https://github.com/akullpp/awesome-java)
+- [**awesome-java**](https://github.com/akullpp/awesome-java) 是一个维护 Java学习资源的开源项目。
 
-awesome-java 是一个维护 Java学习资源的开源项目。
 
-- [awesome-java-cn](https://github.com/jobbole/awesome-java-cn)
-
-awesome-java-cn 是 awesome-java 的中文版本。
+- [**awesome-java-cn**](https://github.com/jobbole/awesome-java-cn) 是 awesome-java 的中文版本。
 
 
 
