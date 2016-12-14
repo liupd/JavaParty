@@ -10,12 +10,11 @@
 
 ## 第一篇 代码的坏味道
 
-### [代码风格(Bloaters)](https://sourcemaking.com/refactoring/smells/bloaters)
+### 代码臃肿
 
-​    ![img](https://sourcemaking.com/images/refactoring-illustrations/bloaters.png)
-
-> 注：Bloaters英文意为熏鲱鱼。我的理解是用这个来比喻风格很臭的一类代码。
-> ***这种坏味道意味着：代码，方法和类，逐渐增加到难以工作的规模。通常，这种坏味道不会立即暴露，而是随着程序的演变而积累（特别是当没有人努力去根除它们时）。***
+> ***代码臃肿是指代码中的类、函数、字段没有经过合理的组织，而是简单的堆砌起来。***
+>
+> ***这一类型的问题通常在代码的初期并不明显，但是随着代码规模的增长而逐渐积累（特别是当没有人努力去根除它们时）。***
 
 - [过长函数(Long Method)](https://sourcemaking.com/refactoring/smells/long-method)
 
