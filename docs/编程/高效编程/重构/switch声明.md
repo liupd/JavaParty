@@ -1,4 +1,4 @@
-# 坏味道——Switch声明(Switch Statements)
+## 坏味道——Switch声明(Switch Statements)
 
 ### 特征
 
@@ -209,7 +209,7 @@ void setWidth(int arg) {
 
 
 
-### 引入 Null 对象(Introduce Null Object)
+### 引入 Null 对象(Introduce Null Object)
 
 **问题**
 
